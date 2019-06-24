@@ -41,10 +41,12 @@ header h1 {
     max-width: 20rem;
     transition: .4s ease-out;
     outline: none;
+    background-color: rgb(224, 224, 224);
 }
 
 .search-input:active, .search-input:hover, .search-input:focus {
     border: 1px solid rgba(50, 50, 50, 0.9);
+    background-color: white;
 }
 
 .search-submit {
@@ -88,10 +90,11 @@ header h1 {
     margin: 10px 10px 20px;
     padding: 10px;
     background: rgba(245, 245, 245, 0.9);
-    border-radius: 0.25em;
+    border-radius: 0.5em;
     border: 1px solid rgba(50, 50, 50, 0.3);
     transition: .4s ease-out;
     overflow: hidden;
+    box-shadow: 5px 5px 10px gray;
 }
 
 .card-img {
@@ -110,7 +113,7 @@ header h1 {
 
 .card-text {
     font-size: 0.9em;
-    color: rgba(50, 50, 50, 0.7);
+    color: rgba(43, 43, 43, 0.788);
     margin: 7px auto;
     transition: .4s ease-out;
 }
@@ -141,7 +144,7 @@ header h1 {
     margin: 10px auto auto;
     padding-bottom: 15px;
     background: rgba(255, 255, 255, 1);
-    border-radius: 0.25em;
+    border-radius: 0.5em;
     border: 1px solid rgba(100, 100, 100, 0.3);
     transition: .4s ease-out;
 }
@@ -151,11 +154,11 @@ header h1 {
     top: 15px;
     right: 15px;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0);
     outline: none;
-    border-radius: 0.25em;
-    border: 1px solid rgba(50, 50, 50, 0.3);
+    border: none;
+    font-size: 1.25em;
 }
 
 .modal-img {
@@ -169,7 +172,7 @@ header h1 {
 }
 
 .modal-text {
-    color: rgba(50, 50, 50, 0.7);
+    color: rgba(43, 43, 43, 0.788);
     margin: 10px;
 }
 
@@ -178,8 +181,9 @@ header h1 {
     margin: 25px auto 30px;
     border-color: rgba(200, 200, 200, 0.2);
 }
-
+/* Saved for posterity
 .modal-btn-container {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -189,9 +193,9 @@ header h1 {
     padding: 10px 15px 15px;;
     margin: 10px auto auto;
     background: rgba(255, 255, 255, 1);
-    border-radius: 0.25em;
+    border-radius: 0.5em;
     border: 1px solid rgba(100, 100, 100, 0.3);
-}
+} */
 
 
 .modal-btn-container .btn {
@@ -205,6 +209,32 @@ header h1 {
     border-radius: 0.35em;
     transition: .4s ease-out;
     outline: none;
+  }
+
+  .modal-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.568);
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .modal-next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.568);
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
   }
   
 
