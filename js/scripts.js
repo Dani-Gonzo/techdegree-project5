@@ -44,16 +44,16 @@ function displayUsers(users) {
     for (let i = 0; i < users.length; i++) {
         
         // creating and appending employee images
-        let $cardDiv = $('<div class="card"></div>');
-        let $cardImage = $(`<div class="card-img-container"><img class="card-img" src="${users[i].picture.large}" alt="profile picture"></div`);
-        let $cardInfo = $('<div class="card-info-container"></div');
+        const $cardDiv = $('<div class="card"></div>');
+        const $cardImage = $(`<div class="card-img-container"><img class="card-img" src="${users[i].picture.large}" alt="profile picture"></div`);
+        const $cardInfo = $('<div class="card-info-container"></div');
         $cardDiv.append($cardImage, $cardInfo);
         $employeeGallery.append($cardDiv);
 
         // creating and appending employee details
-        let $employeeName = $(`<h3 id="name" class="card-name cap">${users[i].name.first} ${users[i].name.last}</h3>`);
-        let $employeeEmail = $(`<p class="card-text">${users[i].email}</p>`);
-        let $employeeLocation = $(`<p class="card-text cap">${users[i].location.city}</p>`);
+        const $employeeName = $(`<h3 id="name" class="card-name cap">${users[i].name.first} ${users[i].name.last}</h3>`);
+        const $employeeEmail = $(`<p class="card-text">${users[i].email}</p>`);
+        const $employeeLocation = $(`<p class="card-text cap">${users[i].location.city}</p>`);
         $cardInfo.append($employeeName, $employeeEmail, $employeeLocation);
 
         // set up click handlers for modal window
@@ -66,10 +66,10 @@ function modalWindow(user, employeeIndex) {
     const employee = user[employeeIndex];
     const $body = $("body");
     // create modal container div
-    let $modalContainer = $('<div class="modal-container"></div>');
+    const $modalContainer = $('<div class="modal-container"></div>');
 
     // create modal window div
-    let $modalWindow = $('<div class="modal"></div>');
+    const $modalWindow = $('<div class="modal"></div>');
     $modalContainer.append($modalWindow);
 
     // create and append modal window close button
@@ -79,7 +79,7 @@ function modalWindow(user, employeeIndex) {
     $modalWindow.append($modalCloseButton);
 
     // build info container
-    let $modalInfo = $('<div class="modal-info-container"></div>');
+    const $modalInfo = $('<div class="modal-info-container"></div>');
     const $modalImage = $(`<img class="modal-img" src="${employee.picture.large}" alt="profile picture">`);
     const $modalName = $(`<h3 id="name" class="modal-name cap">${employee.name.first} ${employee.name.last}</h3>`);
     const $modalEmail = $(`<p class="modal-text">${employee.email}</p>`);
@@ -91,7 +91,7 @@ function modalWindow(user, employeeIndex) {
     const $modalAddress = $(`<p class="modal-text cap">${employee.location.street}, ${employee.location.state} ${employee.location.postcode}</p>`);
 
     // set up birthdate format for proper display
-    let birthdate = employee.dob.date;
+    const birthdate = employee.dob.date;
     let newBirthdate = birthdate.slice(0, 10).split("-");
     newBirthdate = `${newBirthdate[1]}/${newBirthdate[2]}/${newBirthdate[0]}`;
     const $modalBirthday = $(`<p class="modal-text">Birthday: ${newBirthdate}</p>`);
@@ -117,13 +117,13 @@ function formatPhoneNumber(phone) {
 // create and append modal toggle buttons to the modal window
 function createToggle($container, $window, currentEm) {
     if (currentEm-1 >= 0) {
-        let $modalPrev = $('<button type="button" id="modal-prev" class="modal-prev btn"><</button>');
+        const $modalPrev = $('<button type="button" id="modal-prev" class="modal-prev btn"><</button>');
         $window.append($modalPrev);
         $modalPrev.click(() => toggle($container, currentEm-1));
     }
 
     if (currentEm+1 < filteredEmployees.length) {
-        let $modalNext = $('<button type="button" id="modal-next" class="modal-next btn">></button>');
+        const $modalNext = $('<button type="button" id="modal-next" class="modal-next btn">></button>');
         $window.append($modalNext);
         $modalNext.click(() => toggle($container, currentEm+1));
     }
@@ -155,7 +155,7 @@ function createSearchBar() {
 
 // takes original data and assigns a filtered list of employees to filteredEmployees based on user input
 function searchFunctionality(input, employeeList) {
-    let filteredNames = [];
+    const filteredNames = [];
     for (i = 0; i < employeeList.length; i++) {
         const emName = employeeList[i].name;
         if (emName.first.indexOf(input.val()) > -1 || emName.last.indexOf(input.val()) > -1) {
